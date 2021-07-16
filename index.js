@@ -73,8 +73,8 @@ var unifiedServer = (req, res) => {
 //handlers
 var handlers = {}
 
-handlers.sample = (data, callback) => {
-    callback(406,{'name':'sample handler'});
+handlers.ping = (data, callback) => {
+    callback(200);
 };
 
 handlers.notFound = (data, callback) => {
@@ -84,5 +84,6 @@ handlers.notFound = (data, callback) => {
 
 //routers
 var router = {
-    'sample': handlers.sample
+    'sample': handlers.sample,
+    'ping': handlers.ping
 };
