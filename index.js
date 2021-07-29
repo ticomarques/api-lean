@@ -4,6 +4,8 @@ var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
 var fs = require('fs');
+var handlers = require('./lib/handlers');
+var helpers = require('./lib/helpers');
 
 
 var httpServer = http.createServer((req,res) => {
@@ -49,8 +51,9 @@ var unifiedServer = (req, res) => {
         var data = {
             'trimmedPath': trimmedPath,
             'queryStringObject': queryStringObject,
+            'method':method,
             'headers': headers,
-            'payload': buffer
+            'payload': helpers.parseJsonToObject(buffer)
         };
         chosenHandler(data,(statusCode,payload) => {
             statusCode = typeof(statusCode) == 'number' ? statusCode : 200;
@@ -70,20 +73,9 @@ var unifiedServer = (req, res) => {
 
 };
 
-//handlers
-var handlers = {}
-
-handlers.notFound = (data, callback) => {
-    callback(404);
-};
-
-handlers.ping = (data, callback) => {
-    callback(200);
-};
-
-
 //routers
 var router = {
     'notFound': handlers.notFound,
-    'ping': handlers.ping
+    'ping': handlers.ping,
+    'users': handlers.users
 };
