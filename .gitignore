@@ -2,3 +2,5 @@
 *.env
 /https/
 /homeworks/
+.data
+/.data/

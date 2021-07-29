@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
-var config = require('./config');
+var config = require('./lib/config');
 
 
 var httpServer = http.createServer((req,res) => {
