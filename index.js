@@ -7,6 +7,11 @@ var fs = require('fs');
 var handlers = require('./lib/handlers');
 var helpers = require('./lib/helpers');
 
+// @TODO GET RID OF THIS
+// helpers.sendTwilioSms('4158440443','Hello this is test from nodejs API LEAN',(err)=>{
+//     console.log('This was the error: ',err);
+// });
+
 
 var httpServer = http.createServer((req,res) => {
     unifiedServer(req,res);
