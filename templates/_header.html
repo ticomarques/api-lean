@@ -17,13 +17,15 @@
     <body class="{body.class}">
         <div class="wrapper">
             <div class="header">
-                <a href="/" class="logo"></a>
+                <a href="/" class="logo">
+                    <img src="public/logo.png" alt="logo" title="logo" />
+                </a>
                 <ul class="menu">
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#" class="leggedOut">Signup</a></li>
-                    <li><a href="#" class="leggedOut">Login</a></li>
-                    <li><a href="#" class="leggedIn">Dashboard</a></li>
-                    <li><a href="#" class="leggedIn">Account setting</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/account/create" class="leggedOut">Signup</a></li>
+                    <li><a href="/session/create" class="leggedOut">Login</a></li>
+                    <li><a href="/checks/all" class="leggedIn">Dashboard</a></li>
+                    <li><a href="/account/edit" class="leggedIn">Account setting</a></li>
                     <li><a href="#" class="leggedIn">Logout</a></li>
                 </ul>
             </div>
