@@ -3,8 +3,8 @@
 /https/
 /homeworks/
 .data/*
-.data
-.data/*
-/.data/*
+.data/
+/.data/
 .logs/
 /.logs/
+.data/users/1234567890.json
